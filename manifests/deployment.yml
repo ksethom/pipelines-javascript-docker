@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ksethompipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ksethompipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: ksethompipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: ksethompipelinesjavascriptdocker 
+          image: myacrks.azurecr.io/ksethompipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
